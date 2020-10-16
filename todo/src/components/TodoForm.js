@@ -1,15 +1,11 @@
 import React, { useReducer, useState } from "react";
 import {
-    todoReducer,
-    initialStates,
     ADD_ITEM,
     REMOVE_ITEM
 } from '../reducers/todoReducer';
 
 const TodoForm = ({dispatch}) => {
     const [newItem, setNewItem] = useState("");
-
-    const [state, dispatch] = useReducer(todoReducer, initialStates);
 
     const handleChanges = (e) => {
         setNewItem(e.target.value);

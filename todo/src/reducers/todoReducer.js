@@ -18,13 +18,10 @@ export const todoReducer = (state, action) => {
                 id: Date.now()
             };
         case TOGGLE_ITEM:
-            return(
-              state.map(item => {
-                if (item.id === action.payload){
-                  return{...item, completed: !item.completed }
-                }
-                return todo;
-              })
+            return (
+                state.map(item => {
+                    return item.id === action.payload ? {...item, completed: !item.completed} : item
+                })
             )
         case REMOVE_ITEM:
             return (
@@ -34,5 +31,5 @@ export const todoReducer = (state, action) => {
             );
         default:
             return state;
-    };
+    }
 };

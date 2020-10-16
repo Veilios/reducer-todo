@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import TodoForm from './components/TodoForm';
 
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     return (
       <div className="App">
         <h1>To-Do List</h1>
+        <TodoForm />
       </div>
     );
   

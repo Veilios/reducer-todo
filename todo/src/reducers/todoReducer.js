@@ -1,6 +1,6 @@
 export const ADD_ITEM = "ADD_ITEM"
 export const TOGGLE_ITEM = "TOGGLE_ITEM";
-export const REMOVE_TODO = "REMOVE_TODO";
+export const REMOVE_ITEM = "REMOVE_ITEM";
 
 export const initialStates = {
     item: 'Learn about reducers',
@@ -19,9 +19,9 @@ export const todoReducer = (state, action) => {
             };
         case TOGGLE_ITEM:
             return(
-              state.map(todo => {
-                if (todo.id === action.payload){
-                  return{...todo, completed: !todo.completed }
+              state.map(item => {
+                if (item.id === action.payload){
+                  return{...item, completed: !item.completed }
                 }
                 return todo;
               })

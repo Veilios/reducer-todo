@@ -1,35 +1,38 @@
-export const ADD_ITEM = "ADD_ITEM"
-export const TOGGLE_ITEM = "TOGGLE_ITEM";
-export const REMOVE_ITEM = "REMOVE_ITEM";
-
-export const initialStates = {
-    item: 'Learn about reducers',
-    completed: false,
-    id: 3892987589
-};
+export const initalItems = {
+    items:[{
+      description: "Play Video Games",
+      completed: false,
+      id: 123,
+    },
+    {
+      description: "Tell off a 10 year old in game lobby",
+      completed: false,
+      id: 456,
+    },
+    {
+      description: "Saviour the win",
+      completed: false,
+      id: 789,
+    }]
+}
 
 export const todoReducer = (state, action) => {
     switch (action.type) {
-        case ADD_ITEM:
-            return {
-                ...state,
-                item: action.payload, 
-                completed: false, 
-                id: Date.now()
-            };
-        case TOGGLE_ITEM:
-            return (
-                state.map(item => {
-                    return item.id === action.payload ? {...item, completed: !item.completed} : item
-                })
-            )
-        case REMOVE_ITEM:
-            return (
-                state.filter(item => {
-                    item.id !== action.payload
-                })
-            );
-        default:
-            return state;
+    case "ADD_ITEM":
+        return { ...state,  items: state.items.concat({ description: action.payload, completed: false, id: Date.now() })};
+    case "CLEAR_COMPLETED":
+    return {
+      ...state,
+      items: state.items.filter(({completed}) => !completed)
+    };
+      case "TOGGLE_TODO":
+    return {
+      ...state,
+      items: state.items.map(item => (
+        item.id === action.payload ? {...item, completed: !item.completed } : item
+      ))
+    };
+      default:
+        return state;
     }
-};
+  };

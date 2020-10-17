@@ -1,45 +1,40 @@
-import React, { useReducer, useState } from "react";
-import {
-    ADD_ITEM,
-    REMOVE_ITEM
-} from '../reducers/todoReducer';
+import React from "react";
+import {useState} from "react";
 
-const TodoForm = ({dispatch}) => {
-    const [newItem, setNewItem] = useState("");
 
-    const handleChanges = (e) => {
-        setNewItem(e.target.value);
+const TodoForm = ({ addTodo, clearCompleted }) => {
+    const [item, setItem] = useState("");
+    const submitHandler = e => {
+      e.preventDefault();
+      addTodo(item);
+      setItem("");
     };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(
-            {
-                type: ADD_ITEM,
-                payload: newItem
-            }
-        )
-        setNewItem("");
+  
+    const clearHandler = e => {
+      e.preventDefault();
+      clearCompleted();
     };
-
-    const clearFinished = (e) => {
-        e.preventDefault();
-        dispatch(
-            {
-                type: REMOVE_ITEM
-            }
-        )
-    }
-
+  
     return (
+      <form onSubmit={submitHandler}>
+        <input
+          type="text"
+          name="item"
+          placeholder="new todo"
+          onChange={e => setItem(e.target.value)}
+          value={item}
+        />
         <div>
-           <form onSubmit={handleSubmit}>
-                <input type="text" name="newItem" value={newItem} onChange={handleChanges} placeholder="Add Task" />
-                <button type="submit" >Add</button>
-            </form>
-            <button onClick={clearFinished} >Clear</button>
+          <button type="submit">
+            Add
+          </button>
+          <button onClick={clearHandler}>
+            Clear
+          </button>
         </div>
-    )
-}
+      </form>
+    );
+  };
+  
 
 export default TodoForm;

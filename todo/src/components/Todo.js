@@ -1,24 +1,11 @@
-import React from 'react';
-import { TOGGLE_ITEM } from '../reducers/todoReducer';
+import React from "react";
 
-const Todo = (item, dispatch) => {
-    const handleToggle = () => {
-      dispatch(
-        {
-          type: TOGGLE_ITEM,
-          payload: item.id
-        }
-      )
-    }
-  
-  
-      const completed = item.completed ? "line-through red" : "none";
-  
-      return (
-          <li>
-            <span style={{textDecoration: completed}} onClick={handleToggle}>{item.item}</span>
-          </li>
-      )
+const Todo = ({ id, description, completed, toggle}) => {
+  console.log("well done");
+  return(
+    <div className={"toggle-item" + (completed ? 'item-completed' : '')} onClick={() => toggle(id)}>
+    {description}
+    </div>
+  )
 }
-
 export default Todo;

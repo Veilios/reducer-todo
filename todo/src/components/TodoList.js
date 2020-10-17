@@ -1,16 +1,14 @@
-import React from 'react';
-import Todo from './Todo';
+import React from "react";
+import Todo from "./Todo";
 
-const TodoList = ({state, dispatch}) => {
+const TodoList = ({ items, toggle }) => {
+  return (
+    <div>
+      {items.map(item => (
+        <Todo key={item.id} id={item.id} description={item.description} completed={item.completed} toggle={toggle} />
+      ))}
+    </div>
+  );
+};;
 
-    return (
-        <div>
-            {state.map(item => (
-                <Todo item={item} key={item.id} dispatch={dispatch} />
-            ))}
-        </div>
-    )
-
-}
-  
-  export default TodoList;
+export default TodoList;

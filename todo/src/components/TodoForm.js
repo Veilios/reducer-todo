@@ -16,11 +16,11 @@ const TodoForm = ({ addTodo, clearCompleted }) => {
     };
   
     return (
-      <form onSubmit={submitHandler}>
+      <form className="form" onSubmit={submitHandler}>
         <input
           type="text"
           name="item"
-          placeholder="new todo"
+          placeholder="Add Task"
           onChange={e => setItem(e.target.value)}
           value={item}
         />

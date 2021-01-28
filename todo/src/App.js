@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './App.css';
-import TodoForm from './components/TodoForm';
 
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
       </div>
       {/* div for my components */}
       <div>
-        <TodoForm />
       </div>
     </div>
   );

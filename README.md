@@ -18,11 +18,11 @@ In this project, you build an app that let's you display a todo list from reduce
 - [Done] Clone your OWN version of the repository in your terminal.
 - [Done] CD into the project base directory `cd reducer-todo`.
 - [Done] Create a new react app running `npx create-react-app todo --use-npm`.
-- [ ] CD into the react app directory `cd todo`.
-- [ ] Start up the app using `npm start`.
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [Done] CD into the react app directory `cd todo`.
+- [Done] Start up the app using `npm start`.
+- [Done] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [Done] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [Done] Push commits: git push origin `<firstName-lastName>`.
 
 ### Task 2a: Minimum Viable Product
 

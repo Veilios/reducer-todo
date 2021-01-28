@@ -1,12 +1,19 @@
 import React from 'react';
 
 import './App.css';
+import TodoForm from './components/TodoForm';
 
 
 function App() {
   return (
     <div>
-      <h1>To-Do List</h1>
+      <div>
+        <h1>To-Do List</h1>
+      </div>
+      {/* div for my components */}
+      <div>
+        <TodoForm />
+      </div>
     </div>
   );
 }
